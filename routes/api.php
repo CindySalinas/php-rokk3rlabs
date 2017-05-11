@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('/products', 'ProductsController');
+
+Route::resource('/shoppingcarts', 'ShoppingcartsController');

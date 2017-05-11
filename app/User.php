@@ -30,8 +30,8 @@ class User extends Authenticatable
     /**
      *
      */
-    public function shoppingcarts()
+    public function shoppingcart()
     {
-        return $this->hasMany('App\Shoppingcart');
+        return $this->hasOne('App\Shoppingcart');
     }
 }
