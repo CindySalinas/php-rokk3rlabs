@@ -20,8 +20,8 @@ class Shoppingcart extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function products()
-    {
+    public function products(Request $request)
+    {dd($request->user);
         return $this->belongsToMany('App\Product');
     }
 }

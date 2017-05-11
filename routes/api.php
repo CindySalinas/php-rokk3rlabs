@@ -17,6 +17,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('/products', 'ProductsController');
+Route::post('sign-in', 'Auth\LoginController@signIn');
 
-Route::resource('/shoppingcarts', 'ShoppingcartsController');
+// Protected Routes
+Route::group(['middleware' => ['jwt']], function () {
+
+    Route::resource('/products', 'ProductsController');
+
+    Route::resource('/shoppingcarts', 'ShoppingcartsController');
+
+});
