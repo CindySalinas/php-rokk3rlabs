@@ -53,6 +53,12 @@ $ sudo composer install
   php artisan migrate:refresh --seed
 ```
 
+4. autoload files
+
+```bash
+  sudo composer dump-autolad
+```
+
 ### Run
 
 ```bash
