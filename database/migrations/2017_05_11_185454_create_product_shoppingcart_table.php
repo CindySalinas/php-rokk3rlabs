@@ -13,13 +13,13 @@ class CreateCartProductTable extends Migration
      */
     public function up()
     {
-        Schema::create('cart_product', function (Blueprint $table) {
+        Schema::create('product_shoppingcart', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('shoppingcart_id')->unsigned();
             $table->integer('product_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')
+            $table->foreign('shoppingcart_id')->references('id')->on('shoppingcarts')
                 ->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('product_id')->references('id')->on('products')
                 ->onUpdate('cascade')->onDelete('cascade');
@@ -33,6 +33,6 @@ class CreateCartProductTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cart_product');
+        Schema::dropIfExists('product_shoppingcart');
     }
 }
