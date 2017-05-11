@@ -21,7 +21,7 @@ class Shoppingcart extends Model
     }
 
     public function products(Request $request)
-    {dd($request->user);
-        return $this->belongsToMany('App\Product');
+    {
+        return $this->belongsToMany('App\Product')->withPivot(['quantity'])->withTimestamps();
     }
 }

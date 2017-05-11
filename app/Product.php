@@ -20,6 +20,6 @@ class Product extends Model
 
     public function shoppingcarts()
     {
-        return $this->belongsToMany('App\Shoppingcart');
+        return $this->belongsToMany('App\Shoppingcart')->withPivot(['quantity'])->withTimestamps();
     }
 }

@@ -17,6 +17,7 @@ class CreateProductShoppingcartTable extends Migration
             $table->increments('id');
             $table->integer('shoppingcart_id')->unsigned();
             $table->integer('product_id')->unsigned();
+            $table->integer('quantity')->unsigned();
             $table->timestamps();
 
             $table->foreign('shoppingcart_id')->references('id')->on('shoppingcarts')
