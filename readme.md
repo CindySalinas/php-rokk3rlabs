@@ -56,7 +56,7 @@ $ sudo composer install
 4. autoload files
 
 ```bash
-  sudo composer dump-autolad
+  sudo composer dump-autoload
 ```
 
 ### Run
