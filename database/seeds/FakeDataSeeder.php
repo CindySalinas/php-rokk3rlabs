@@ -13,12 +13,19 @@ class FakeDataSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
+        App\User::create([
+            'first_name' => 'Test',
+            'last_name' =>  'User',
+            'email' => 'user@test.com',
+            'password' => bcrypt('123456'),
+        ]);
+
         for ($i=0; $i < 10; $i++) {
             $user = App\User::create([
             	'first_name' => $faker->firstName,
             	'last_name' =>  $faker->lastName,
             	'email' =>  $faker->unique()->freeEmail,
-            	'password' => '123456',
+            	'password' => bcrypt('123456'),
             ]);
         }
 
